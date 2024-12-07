@@ -27,7 +27,7 @@ form {
 
 
 .img-container {
-    width: 45%;
+    width: 35%;
     min-height: 100vh;
     background-image: url(./halie-west-25xggax4bSA-unsplash.jpg);
     background-size: cover;
@@ -46,10 +46,6 @@ form {
 
 img {
     height: 80%;
-}
-
-.body-container {
-    width: 55%;
 }
 
 button {
