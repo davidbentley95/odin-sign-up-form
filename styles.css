@@ -1,0 +1,62 @@
+:root {
+    --compliment-clr: #596D48;
+    --invalid-clr: #C62E2E;
+    --valid-clr: #8EB486;
+    --default-clr: #E5E7EB;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    background-color: var(--default-clr);
+}
+
+form {
+    background-color: white;
+    height: 35vh;
+}
+
+.top-section {
+    height: 33vh
+}
+
+
+.img-container {
+    width: 45%;
+    min-height: 100vh;
+    background-image: url(./halie-west-25xggax4bSA-unsplash.jpg);
+    background-size: cover;
+}
+
+.title {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 15%;
+    font-size: 2rem;
+    margin-top: 40%;
+}
+
+img {
+    height: 80%;
+}
+
+.body-container {
+    width: 55%;
+}
+
+button {
+    background: var(--compliment-clr);
+    color: white;
+}
+
+a {
+    color: var(--compliment-clr)   
+}
