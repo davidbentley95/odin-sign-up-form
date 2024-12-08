@@ -1,8 +1,16 @@
+@font-face {
+    font-family: 'NorseBold';
+    src: url('./Norse-Bold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 :root {
     --compliment-clr: #596D48;
     --invalid-clr: #C62E2E;
     --valid-clr: #8EB486;
     --default-clr: #E5E7EB;
+    --active-clr: #1145f0;
 }
 
 * {
@@ -13,18 +21,61 @@
 
 body {
     display: flex;
-    background-color: var(--default-clr);
+    background-color: rgb(248, 248, 248);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 form {
     background-color: white;
     height: 35vh;
+    padding-left: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-elements {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 25px;
+}
+
+input {
+    padding: 5px;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    border: 1px solid var(--default-clr)
+}
+
+input:valid {
+    border-color: var(--valid-clr);
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--active-clr);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+}
+
+.input-label-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .top-section {
-    height: 33vh
+    height: 33vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 80px;
 }
 
+.top-section h2 {
+    margin-bottom: 30px;
+}
 
 .img-container {
     width: 35%;
@@ -40,8 +91,9 @@ form {
     align-items: center;
     justify-content: center;
     height: 15%;
-    font-size: 2rem;
+    font-size: 4rem;
     margin-top: 40%;
+    font-family: NorseBold, sans-serif;
 }
 
 img {
@@ -51,6 +103,12 @@ img {
 button {
     background: var(--compliment-clr);
     color: white;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px 60px;
+    border-radius: 10px;
+    margin-left: 70px;
+    margin-top: 30px;
 }
 
 a {
