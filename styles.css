@@ -49,8 +49,16 @@ input {
     border: 1px solid var(--default-clr)
 }
 
-input:valid {
+input:placeholder-shown {
+    border: 1px solid var(--default-clr);
+}
+
+input:valid:not(:placeholder-shown) {
     border-color: var(--valid-clr);
+}
+
+input:invalid:not(:placeholder-shown) {
+    border-color: var(--invalid-clr);
 }
 
 input:focus {
