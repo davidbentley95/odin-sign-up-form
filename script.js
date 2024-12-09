@@ -1,6 +1,7 @@
 const passwordInput = document.querySelector("#password");
 const confirmPasswordInput = document.querySelector("#confirm-password");
 const passwordErrorMsg = document.querySelector(".password-error");
+const phoneNumberInput = document.querySelector("#phone-number");
 
 function checkPassword(event) {
 
@@ -17,6 +18,19 @@ function checkPassword(event) {
     }
 }
 
+function autoFormatNumber(event) {
+    console.log(event.target.value.length)
+
+    let numberStringArray = event.target.value.split("");
+
+    if(event.target.value.length === 10 & !numberStringArray.includes("-")) {
+        numberStringArray.splice(3,0,"-");
+        numberStringArray.splice(7,0,"-")
+        phoneNumberInput.value = numberStringArray.join("");
+    }
+}
+
 passwordInput.addEventListener("input", checkPassword);
 confirmPasswordInput.addEventListener("input", checkPassword);
+phoneNumberInput.addEventListener("input", autoFormatNumber);
 
