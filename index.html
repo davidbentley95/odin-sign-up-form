@@ -35,22 +35,23 @@
                     <input type="email" id="email-address" name="email-address" placeholder="example@email.com" required>
                 </div>
                 <div class="input-label-container">
-                    <label for="phone-number">PHONE NUMBER</label>
+                    <label for="phone-number">PHONE NUMBER*</label>
                     <input type="text" id="phone-number" name="phone-number" pattern="^\d{3}-\d{3}-\d{4}$" placeholder="000-000-0000" required>
                 </div>
                 <div class="input-label-container">
                     <label for="password">PASSWORD*</label>
                     <input type="password" id="password" name="password" placeholder="**********" required>
+                    <p class="password-error">*Passwords do not match</p>
                 </div>
                 <div class="input-label-container">
                     <label for="confirm-password">CONFIRM PASSWORD</label>
-                    <input type="text" id="confirm-password" name="confirm-password" placeholder="**********" required>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="**********" required>
                 </div>
             </div>
         </form>
         <section class="bottom-section">
             <div class="button-div">
-                <button>Create Account</button>
+                <button type="submit">Create Account</button>
                 <p>Already have an account? <a href="">Log in</a></p>
             </div>
         </section>
