@@ -12,7 +12,7 @@
         <div class="title">
             <img src="odin-lined.png" alt="The odin project logo">
             <h1>ODIN</h1>
-        </div c>
+        </div>
     </div>
     <div class="body-container">
         <section class="top-section">
@@ -20,41 +20,43 @@
             <h2>You <em>know</em> you want to.</h2>
         </section>
         <form action="">
-            <h2>Let's do this!</h2>
-            <div class="form-elements">
-                <div class="input-label-container">
-                    <label for="first-name">FIRST NAME</label>
-                    <input type="text" id="first-name" name="first-name" placeholder="Thor"> 
-                </div>
-                <div class="input-label-container">
-                    <label for="last-name">LAST NAME</label>
-                    <input type="text" id="last-name" name="last-name" placeholder="Odinson">
-                </div>
-                <div class="input-label-container">
-                    <label for="email-address">EMAIL*</label>
-                    <input type="email" id="email-address" name="email-address" placeholder="example@email.com" required>
-                </div>
-                <div class="input-label-container">
-                    <label for="phone-number">PHONE NUMBER*</label>
-                    <input type="text" id="phone-number" name="phone-number" pattern="^\d{3}-\d{3}-\d{4}$" placeholder="000-000-0000" maxlength="12" required>
-                </div>
-                <div class="input-label-container">
-                    <label for="password">PASSWORD*</label>
-                    <input type="password" id="password" name="password" placeholder="**********" maxlength="10" required>
-                    <p class="password-error">*Passwords do not match</p>
-                </div>
-                <div class="input-label-container">
-                    <label for="confirm-password">CONFIRM PASSWORD</label>
-                    <input type="password" id="confirm-password" name="confirm-password" placeholder="**********" required>
+            <div class="main-form">
+                <h2>Let's do this!</h2>
+                <div class="form-elements">
+                    <div class="input-label-container">
+                        <label for="first-name">FIRST NAME</label>
+                        <input type="text" id="first-name" name="first-name" placeholder="Thor"> 
+                    </div>
+                    <div class="input-label-container">
+                        <label for="last-name">LAST NAME</label>
+                        <input type="text" id="last-name" name="last-name" placeholder="Odinson">
+                    </div>
+                    <div class="input-label-container">
+                        <label for="email-address">EMAIL*</label>
+                        <input type="email" id="email-address" name="email-address" placeholder="example@email.com" required>
+                    </div>
+                    <div class="input-label-container">
+                        <label for="phone-number">PHONE NUMBER*</label>
+                        <input type="text" id="phone-number" name="phone-number" pattern="^\d{3}-\d{3}-\d{4}$" placeholder="000-000-0000" maxlength="12" required>
+                    </div>
+                    <div class="input-label-container">
+                        <label for="password">PASSWORD*</label>
+                        <input type="password" id="password" name="password" placeholder="**********" maxlength="10" required>
+                        <p class="password-error">*Passwords do not match</p>
+                    </div>
+                    <div class="input-label-container">
+                        <label for="confirm-password">CONFIRM PASSWORD</label>
+                        <input type="password" id="confirm-password" name="confirm-password" placeholder="**********" required>
+                    </div>
                 </div>
             </div>
+            <section class="bottom-section">
+                <div class="button-div">
+                    <button type="submit">Create Account</button>
+                    <p>Already have an account? <a href="">Log in</a></p>
+                </div>
+            </section>
         </form>
-        <section class="bottom-section">
-            <div class="button-div">
-                <button type="submit">Create Account</button>
-                <p>Already have an account? <a href="">Log in</a></p>
-            </div>
-        </section>
     </div>
 </body>
 </html>

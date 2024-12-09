@@ -29,12 +29,9 @@ h2 {
     font-size: 1.3rem;
 }
 
-form {
+.main-form {
     background-color: white;
-    padding: 80px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    padding: 40px 80px 80px 80px;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -147,7 +144,8 @@ button:hover {
 }
 
 button:active {
-    transform:scale(80%)
+    background-color: black;
+    color: var(--compliment-clr)
 }
 
 a {

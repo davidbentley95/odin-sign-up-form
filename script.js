@@ -34,3 +34,4 @@ passwordInput.addEventListener("input", checkPassword);
 confirmPasswordInput.addEventListener("input", checkPassword);
 phoneNumberInput.addEventListener("input", autoFormatNumber);
 
+
