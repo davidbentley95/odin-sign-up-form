@@ -176,4 +176,25 @@ a {
     .form-elements {
         grid-template-columns: 1fr;
     }
+
+    form {
+        text-align: center;
+    }
+
+    .input-label-container{
+        align-items: center;
+    }
+
+    label {
+        align-self: flex-start;
+    }
+    
+    input {
+        width: 100%;
+    }
+
+    div.button-div {
+        margin: 0;
+    }
+
 }
