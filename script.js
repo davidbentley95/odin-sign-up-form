@@ -3,17 +3,63 @@ const confirmPasswordInput = document.querySelector("#confirm-password");
 const passwordErrorMsg = document.querySelector(".password-error");
 const phoneNumberInput = document.querySelector("#phone-number");
 
-function checkPassword(event) {
+const rootStyles = getComputedStyle(document.documentElement);
+const invalidColor = rootStyles.getPropertyValue("--invalid-clr").trim();
+const validColor = rootStyles.getPropertyValue("--valid-clr").trim();
+
+function checkRequiredCharacters(event) {
+    document.querySelectorAll("li").forEach(item => item.style.display = "block");
+    const eventString = event.target.value;
+
+    const hasUppercase = /[A-Z]/.test(eventString);
+    const hasLowercase = /[a-z]/.test(eventString);
+    const hasNumber = /\d/.test(eventString);
+    const hasSpecialChar = /[^A-Za-z0-9]/.test(eventString);
+
+    if(!hasUppercase) {
+        document.querySelector(".uppercase").style.color = invalidColor;
+        document.querySelector(".uppercase-wording").innerHTML = "Does not contain";
+    } else {
+        document.querySelector(".uppercase").style.color = validColor;
+        document.querySelector(".uppercase-wording").innerHTML = "Contains";
+    }
+
+    if(!hasLowercase) {
+        document.querySelector(".lowercase").style.color = invalidColor;
+        document.querySelector(".lowercase-wording").innerHTML = "Does not contain";
+    } else {
+        document.querySelector(".lowercase").style.color = validColor;
+        document.querySelector(".lowercase-wording").innerHTML = "Contains";
+    }
+
+    if(!hasNumber) {
+        document.querySelector(".number").style.color = invalidColor;
+        document.querySelector(".number-wording").innerHTML = "Does not contain";
+    } else {
+        document.querySelector(".number").style.color = validColor;
+        document.querySelector(".number-wording").innerHTML = "Contains";
+    }
+
+    if(!hasSpecialChar) {
+        document.querySelector(".special-char").style.color = invalidColor;
+        document.querySelector(".special-wording").innerHTML = "Does not contain";
+    } else {
+        document.querySelector(".special-char").style.color = validColor;
+        document.querySelector(".special-wording").innerHTML = "Contains";
+    }
+}
+
+function checkPasswordsMatch(event) {
 
     if(event.target.value !== passwordInput.value || event.target.value !== confirmPasswordInput.value) {
-        event.target.style.borderColor = "#C62E2E";
-        passwordInput.style.borderColor = "#C62E2E";
+        confirmPasswordInput.style.borderColor = invalidColor;
+        passwordInput.style.borderColor = invalidColor;
         passwordErrorMsg.style.display = "block";
-        passwordErrorMsg.style.color = "#C62E2E";
+        passwordErrorMsg.style.color = invalidColor;
     }
-    if(event.target.value === passwordInput.value && event.target.value === confirmPasswordInput.value) {
-        event.target.style.borderColor = "#8EB486";
-        passwordInput.style.borderColor = "#8EB486";
+    if(event.target.value === passwordInput.value && event.target.value === confirmPasswordInput.value && event.target.value !== "") {
+        event.target.style.borderColor = validColor;
+        passwordInput.style.borderColor = validColor;
         passwordErrorMsg.style.display = "none";
     }
 }
@@ -30,8 +76,11 @@ function autoFormatNumber(event) {
     }
 }
 
-passwordInput.addEventListener("input", checkPassword);
-confirmPasswordInput.addEventListener("input", checkPassword);
+passwordInput.addEventListener("input", e => {
+    checkPasswordsMatch(e);
+    checkRequiredCharacters(e);
+});
+confirmPasswordInput.addEventListener("input", checkPasswordsMatch);
 phoneNumberInput.addEventListener("input", autoFormatNumber);
 
 

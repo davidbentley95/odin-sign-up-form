@@ -41,12 +41,18 @@
                     </div>
                     <div class="input-label-container">
                         <label for="password">PASSWORD*</label>
-                        <input type="password" id="password" name="password" placeholder="**********" required>
-                        <p class="password-error">*Passwords do not match</p>
+                        <input type="password" id="password" name="password" placeholder="**********" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^A-Za-z0-9]).+$" required>
+                        <ul>
+                            <li class="uppercase"><span class="uppercase-wording">Does not contain</span> an uppercase letter</li>
+                            <li class="lowercase"><span class="lowercase-wording">Does not contain</span> a lowercase letter</li>
+                            <li class="special-char"><span class="special-wording">Does not contain</span> a special character</li>
+                            <li class="number"><span class="number-wording">Does not contain</span> a number</li>
+                        </ul>
                     </div>
                     <div class="input-label-container">
                         <label for="confirm-password">CONFIRM PASSWORD</label>
                         <input type="password" id="confirm-password" name="confirm-password" placeholder="**********" required>
+                        <p class="password-error">*Passwords do not match</p>
                     </div>
                 </div>
             </div>
