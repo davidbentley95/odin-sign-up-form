@@ -4,8 +4,8 @@ const passwordErrorMsg = document.querySelector(".password-error");
 const phoneNumberInput = document.querySelector("#phone-number");
 
 const rootStyles = getComputedStyle(document.documentElement);
-const invalidColor = rootStyles.getPropertyValue("--invalid-clr").trim();
-const validColor = rootStyles.getPropertyValue("--valid-clr").trim();
+const invalidColor = "#C62E2E";
+const validColor = "#8EB486";
 
 function checkRequiredCharacters(event) {
     document.querySelectorAll("li").forEach(item => item.style.display = "block");
