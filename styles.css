@@ -23,7 +23,6 @@ body {
     display: flex;
     background-color: rgb(248, 248, 248);
     font-family: Arial, Helvetica, sans-serif;
-    overflow: hidden;
 }
 
 h2 {
